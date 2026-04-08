@@ -5,6 +5,7 @@ import lombok.*;
 import org.apache.catalina.User;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity(name = "transactions")
 @Table(name = "transactions")
@@ -21,8 +22,11 @@ public class Transaction {
     private BigDecimal amount;
 
     @ManyToOne
+    @JoinColumn(name = "sender_id")
     private User sender;
 
     @ManyToOne
+    @JoinColumn(name = "receiver_id")
     private User receiver;
+    private LocalDateTime date;
 }
