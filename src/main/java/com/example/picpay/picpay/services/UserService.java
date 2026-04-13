@@ -12,14 +12,14 @@ import java.math.BigDecimal;
 public class UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository repository;
 
-    public void validateTransaction(User sender, BigDecimal anount) throws Exception{
+    public void validateTransaction(User sender, BigDecimal amount) throws Exception{
         if (sender.getUserType() == UserType.MERCHANT){
                 throw new Exception("gg");
         }
 
-        if (sender.getBalance().compareTo(anount) < 0){
+        if (sender.getBalance().compareTo(amount) < 0){
             throw new Exception("xd");
         }
     }
