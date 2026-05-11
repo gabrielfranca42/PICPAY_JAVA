@@ -23,4 +23,13 @@ public class UserService {
             throw new Exception("xd");
         }
     }
+
+
+    public  User findUserById(Long id) throws Exception{
+        return this.repository.findUserById(id).orElseThrow(() -> new Exception("USUARIO XD "));
+    }
+
+    public void saveUser(User user){
+        this.repository.save(user);
+    }
 }
