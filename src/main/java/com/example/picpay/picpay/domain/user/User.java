@@ -3,7 +3,7 @@ package com.example.picpay.picpay.domain.user;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.usertype.UserType;
+import com.example.picpay.picpay.domain.user.UserType;
 
 import java.math.BigDecimal;
 
