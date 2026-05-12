@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Map;
 
 @Service
@@ -36,6 +37,12 @@ public class TransactionService {
         if(!isAuthorized){
             throw new  Exception("transação deu merda ");
         }
+
+        Transaction newTransaction = new Transaction();
+        newTransaction.setAmount(transaction.value());
+        newTransaction.setSender(sender);
+        newTransaction.setReceiver(receiver);
+        newTransaction.setTimestamp(LocalDateTime.now());
     }
 
     public boolean authorizeTransaction(User sender, BigDecimal value) {
