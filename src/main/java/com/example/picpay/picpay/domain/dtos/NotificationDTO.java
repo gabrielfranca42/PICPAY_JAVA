@@ -1,6 +1,9 @@
 package com.example.picpay.picpay.domain.dtos;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class NotificationDTO {
-    public NotificationDTO(String email, String message) {
-    }
+  private String email;
+  private String message;
 }
