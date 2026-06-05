@@ -2,10 +2,13 @@ package com.example.picpay.picpay.domain.transaction;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.apache.catalina.User;
+import com.example.picpay.picpay.domain.user.User;
+
+
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
 
 @Entity(name = "transactions")
 @Table(name = "transactions")
@@ -29,4 +32,7 @@ public class Transaction {
     @JoinColumn(name = "receiver_id")
     private User receiver;
     private LocalDateTime date;
+
+    public void setTimestamp(LocalDateTime now) {
+    }
 }
